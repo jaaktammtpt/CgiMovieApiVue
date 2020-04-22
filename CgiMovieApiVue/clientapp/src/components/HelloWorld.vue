@@ -1,35 +1,26 @@
 <template>
-    <div class="hello">
-        <h1>{{ msg }}</h1>
-        <p>
-            For a guide and recipes on how to configure / customize this project,<br>
-            check out the
-            <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-        </p>
-        <h3>Installed CLI Plugins</h3>
-        <ul>
-            <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-            <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-        </ul>
-        <h3>Essential Links</h3>
-        <ul>
-            <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-            <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-            <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-            <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-            <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-        </ul>
-        <h3>Ecosystem</h3>
-        <ul>
-            <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-            <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-            <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-            <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-            <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-        </ul>
-        <code style="text-align: left;">
-            <pre>  {{ JSON.stringify(forecasts, null, 2) }} </pre>
-        </code>
+
+    <div>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.1/css/bulma.css" />
+
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Year</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="movie in movies" v-bind:key="movie">
+                    <td>{{ movie.title }}</td>
+                    <td>{{ movie.category.name }}</td>
+                    <td>{{ movie.year }}</td>
+                    <td>{{ movie.rating }}</td>
+                </tr>
+            </tbody>
+        </table>        
     </div>
 
     
@@ -42,12 +33,12 @@
             msg: String
         },
         data() {
-            return { forecasts: [] };
+            return { movies: [] };
         },
         created() {
             fetch('api/movies')
                 .then(res => res.json())
-                .then(forecasts => { this.forecasts = forecasts; });
+                .then(movies => { this.movies = movies; });
         }
     }
 </script>
