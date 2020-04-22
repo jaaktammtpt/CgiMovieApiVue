@@ -1,0 +1,14 @@
+Lahenduse käik
+Tööks kulutatud ajakulu on 4 x 4 tundi. 
+Mõned nädalad tagasi sai iseseisva koolitööna tutvutud repository pattern'iga. 
+Õpetaja poolt antud materlidest kattus olulises osas etteantud ülesandega (https://medium.com/net-core/repository-pattern-implementation-in-asp-net-core-21e01c6664d7). Seega sai sisuliselt 1:1 kasutatud näidiskoodi ning muudetud seda ülesande püstitusega sobivamaks (välja sai vahetatud andmebaasi ühendus InMemoryDatabase vastu, muudetud configuratsiooni vastavalt tekkinud veateadetele, lisatud lazy loading jm pisimuudatusi). Püstitatud ülesandele vastab lahendus osaliselt. 
+
+Keerulisemaks tegi ülesande see, et ette olid tehnilised ootused ning äriloogika oli ebapiisavad minu jaoks. Palju oli küll ette kirjutatud, aga palju oli jäetud lahendaja fantaasia hooleks. Kiusatus oli panna filmi pealkirja tüübiks decimal :). Ilmselt kogenenumana oleks aru saanud, et milleks on hea Movies list, aga hetkel ei leidnud vajadust selle tegemiseks. 
+
+Kahjuks nagu ikka on kõige suuremaks limiteerivaks teguriks aeg, mida kahjuks nappis. Muudele probleemidele leiab tavalisest googeldades ideid kuidas asjad tehtud saaks :D. 
+
+Kasutatud arendusvahendid:
+Visual Studio 2019
+Node
+
+22.04.2020
